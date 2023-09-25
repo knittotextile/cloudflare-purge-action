@@ -1,6 +1,6 @@
 {
   "name": "@knitto/cloudflare-purge-action",
-  "description": "Purge a zone's cache via the Cloudflare API",
+  "description": "Github action to purge Cloudflare cache",
   "version": "0.0.1",
   "exports": {
     ".": "./dist/index.js"
