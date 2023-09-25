@@ -1,0 +1,25 @@
+name: "Cloudflare Purge Cache"
+description: "Purge a zone's cache via the Cloudflare API"
+author: "Nurliman Diara"
+
+# Define your inputs here.
+inputs:
+  cloudflare_zone:
+    description: "The Zone ID of your domain, which can be found in the right sidebar of your domain's overview page on the Cloudflare dashboard."
+    required: true
+  cloudflare_token:
+    description: "The restricted API Token with permissions to purge the cache of one or more zones."
+  cloudflare_email:
+    description: "The email address you registered your Cloudflare account with."
+  cloudflare_key:
+    description: Your Cloudflare API key, which can be generated using these [instructions](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).
+  purge_tags:
+    description: "A comma-separated list of tags to purge from the cache. If you specify a tag that does not exist, it will be ignored."
+  purge_hosts:
+    description: "A comma-separated list of hosts to purge from the cache. If you specify a host that does not exist, it will be ignored."
+  purge_prefixes:
+    description: "A comma-separated list of prefixes to purge from the cache. If you specify a prefix that does not exist, it will be ignored."
+
+runs:
+  using: node20
+  main: dist/index.js
