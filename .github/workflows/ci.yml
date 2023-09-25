@@ -42,8 +42,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install Dependencies
-        id: pnpm-ci
-        run: pnpm ci
+        id: pnpm-i
+        run: pnpm install --frozen-lockfile
 
       - name: Check Format
         id: pnpm-format-check
